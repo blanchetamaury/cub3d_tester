@@ -1,0 +1,17 @@
+NO ./assets/debug_north.png
+WE ./assets/debug_west.png
+SO ./assets/debug_south.png
+EA ./assets/debug_east.png
+
+C 173,199,171
+F 35,252,112
+
+11111111111
+10001000001
+10101010101
+10001000001
+1000N000001
+10001000001
+10101010101
+10001000001
+11111111111

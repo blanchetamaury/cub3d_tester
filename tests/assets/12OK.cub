@@ -1,0 +1,13 @@
+NO ../textures/stone.xpm
+WE /usr/share/textures/wood.bmp
+SO ./very_long_filename_texture_name.png
+EA ./assets/subfolder/texture.png
+
+C 79,202,140
+F 77,213,106
+
+11111
+10001
+10N01
+10001
+11111

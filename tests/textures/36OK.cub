@@ -1,0 +1,13 @@
+NO ../parent/texture.png
+WE ./texture.xpm
+SO ./texture.bmp
+EA ./very_long_filename_texture.png
+
+C 255,255,255
+F 0,0,0
+
+11111
+10001
+10N01
+10001
+11111

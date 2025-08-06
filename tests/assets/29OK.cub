@@ -1,0 +1,13 @@
+NO ./with-dash.png
+WE ./assets/debug_north.png
+SO ./assets/textures/wall.png
+EA ../textures/stone.xpm
+
+C 173,240,229
+F 211,144,83
+
+11111
+10001
+10N01
+10001
+11111

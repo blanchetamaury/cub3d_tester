@@ -1,0 +1,13 @@
+NO ./assets/subfolder/texture.png
+WE texture.png
+SO ./123numeric.png
+EA ./under_score.png
+
+C 200,181,84
+F 105,69,74
+
+11111
+10001
+10N01
+10001
+11111

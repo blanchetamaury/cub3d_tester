@@ -1,0 +1,13 @@
+NO texture.png
+WE ./123numeric.png
+SO ./under_score.png
+EA ./with-dash.png
+
+C 139,83,151
+F 109,29,118
+
+11111
+10001
+10N01
+10001
+11111

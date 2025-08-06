@@ -1,0 +1,13 @@
+NO ./assets/debug_north.png
+WE ./assets/textures/wall.png
+SO ../textures/stone.xpm
+EA /usr/share/textures/wood.bmp
+
+C 148,124,230
+F 251,183,174
+
+11111
+10001
+10N01
+10001
+11111
