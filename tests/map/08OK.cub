@@ -1,0 +1,25 @@
+NO ./assets/debug_north.png
+WE ./assets/debug_west.png
+SO ./assets/debug_south.png
+EA ./assets/debug_east.png
+
+F 255,100,0
+C 225,0,0
+
+
+
+11111111111
+10000000001
+10000000001
+11101110111 1
+10101010001 1 1
+1000000N001 1 1 1
+11111111111 1 1 1 1
+
+1111
+
+111
+
+11
+
+1

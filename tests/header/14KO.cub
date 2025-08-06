@@ -1,0 +1,14 @@
+N ./cub3d_tester/assets/debug_north.png
+W ./cub3d_tester/assets/debug_west.png
+S ./cub3d_tester/assets/debug_south.png
+E ./cub3d_tester/assets/debug_east.png
+
+C 0,0,255
+F 0,255,0
+
+11111
+10001
+10N01
+10001
+11111
+
