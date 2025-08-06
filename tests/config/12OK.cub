@@ -1,0 +1,13 @@
+NO ./assets/textures/wall_north.png
+WE ./assets/debug_west.png
+SO ./assets/debug_south.png
+EA ./assets/debug_east.png
+
+C 107,207,50
+F 143,113,251
+
+11111
+10001
+10N01
+10001
+11111

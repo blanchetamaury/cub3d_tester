@@ -1,0 +1,13 @@
+NO /usr/share/textures/wood.bmp
+WE ./very_long_filename_texture_name.png
+SO ./assets/subfolder/texture.png
+EA texture.png
+
+C 237,91,216
+F 209,198,24
+
+11111
+10001
+10N01
+10001
+11111

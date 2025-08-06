@@ -1,0 +1,13 @@
+NO /absolute/path/texture.png
+WE relative/path/texture.png
+SO ../parent/texture.png
+EA ./texture.xpm
+
+C 255,255,255
+F 0,0,0
+
+11111
+10001
+10N01
+10001
+11111

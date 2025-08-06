@@ -1,0 +1,13 @@
+NO ./very_long_filename_texture_name.png
+WE ./assets/subfolder/texture.png
+SO texture.png
+EA ./123numeric.png
+
+C 116,212,44
+F 77,159,201
+
+11111
+10001
+10N01
+10001
+11111

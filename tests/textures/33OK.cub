@@ -1,0 +1,13 @@
+NO ./assets/debug_west.png
+WE /absolute/path/texture.png
+SO relative/path/texture.png
+EA ../parent/texture.png
+
+C 255,255,255
+F 0,0,0
+
+11111
+10001
+10N01
+10001
+11111

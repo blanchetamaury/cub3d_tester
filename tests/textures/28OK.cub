@@ -1,0 +1,13 @@
+NO ./texture.bmp
+WE ./very_long_filename_texture.png
+SO ./assets/debug_north.png
+EA ./assets/debug_south.png
+
+C 255,255,255
+F 0,0,0
+
+11111
+10001
+10N01
+10001
+11111

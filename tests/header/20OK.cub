@@ -1,0 +1,13 @@
+NO ./assets/debug_north.png
+WE ./assets/debug_west.png
+SO ./assets/debug_south.png
+EA ./assets/debug_east.png
+
+C 21,2,103
+F 185,87,69
+
+11111
+10001
+10N01
+10001
+11111
