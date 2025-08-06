@@ -48,7 +48,7 @@ function header() {
 
     NUM_TESTS=0
 
-    for file in ./cub3d_tester/tests/header/*.cub; do
+    for file in ./tests/header/*.cub; do
         printf "│ TEST %02d :$YELLOW Testing...$RESET         │" "$NUM_TESTS"
         test "$file"
         ((NUM_TESTS++))
@@ -73,7 +73,7 @@ function color() {
 
     NUM_TESTS=0
 
-    for file in ./cub3d_tester/tests/color/*.cub; do
+    for file in ./tests/color/*.cub; do
         printf "│ TEST %02d :$YELLOW Testing...$RESET         │" "$NUM_TESTS"
         test "$file"
         ((NUM_TESTS++))
@@ -98,7 +98,7 @@ function map() {
 
     NUM_TESTS=0
 
-    for file in ./cub3d_tester/tests/map/*.cub; do
+    for file in ./tests/map/*.cub; do
         printf "│ TEST %02d :$YELLOW Testing...$RESET         │" "$NUM_TESTS"
         test "$file"
         ((NUM_TESTS++))
@@ -123,7 +123,7 @@ function bonus() {
 
     NUM_TESTS=0
 
-    for file in ./cub3d_tester/tests/bonus/*.cub; do
+    for file in ./tests/bonus/*.cub; do
         printf "│ TEST %02d :$YELLOW Testing...$RESET         │" "$NUM_TESTS"
         test "$file"
         ((NUM_TESTS++))
