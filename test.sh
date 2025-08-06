@@ -34,6 +34,55 @@ function test() {
     fi
 }
 
+function test_val() {
+    local filename="$1"
+
+    timeout -s TERM --kill-after=2s 30s \
+    valgrind --error-exitcode=1 \
+             --suppressions=cub3d_tester/valgrind.supp \
+             ./cub3d "$filename" 2> log_val
+
+    input="log_val"
+    status="FALSE"
+    while IFS= read -r line
+    do
+        if [[ "$line" == *"still reachable "* ]]; then
+            status=TRUE
+            break
+        fi
+        if [[ "$line" == *"invalid"* ]]; then
+            status=TRUE
+            break
+        fi
+        if [[ "$line" == *"conditionnal jump"* ]]; then
+            status=TRUE
+            break
+        fi
+        if [[ "$line" == *"uninitialized"* ]]; then
+            status=TRUE
+            break
+        fi
+        if [[ "$line" == *"definitely lost "* ]]; then
+            status=TRUE
+            break
+        fi
+        if [[ "$line" == *"indirectly lost "* ]]; then
+            status=TRUE
+            break
+        fi
+        if [[ "$line" == *"possibly lost "* ]]; then
+            status=TRUE
+            break
+        fi
+    done < "$input"
+
+    if [[ "$status" == "FALSE" ]]; then
+        printf "\r│ TEST %02d :$GREEN OK$RESET                 │\n" "$NUM_TESTS"
+    else
+        printf "\r│ TEST %02d :$RED KO$RESET                 │\n" "$NUM_TESTS"
+    fi
+}
+
 function header() {
     if [[ "$1" == "TRUE" ]]; then
         echo
@@ -50,7 +99,11 @@ function header() {
 
     for file in ./cub3d_tester/tests/header/*.cub; do
         printf "│ TEST %02d :$YELLOW Testing...$RESET         │" "$NUM_TESTS"
-        test "$file"
+        if [[ "$1" == "TRUE" ]]; then
+            test_val "$file"
+        else
+            test
+        fi
         ((NUM_TESTS++))
     done
 
@@ -136,34 +189,45 @@ function bonus() {
 
 if [[ "$1" == "-help" ]]; then
     echo
-    echo "Header = -h, Color = -c, Map = -m, Manda = -ma, Bonus = -b, all = -a"
+    echo "Header = -h, Color = -c, Map = -m, Manda = -ma, Bonus = -b, all = -a, valgrind = -va"
     exit 0
 fi
 
 if [[ "$1" == "-h" ]]; then
-    header "TRUE" "TRUE"
+    header "TRUE" "TRUE" "FALSE"
 fi
 
 if [[ "$1" == "-c" ]]; then
-    color "TRUE" "TRUE"
+    color "TRUE" "TRUE" "FALSE"
 fi
 
 if [[ "$1" == "-m" ]]; then
-    map "TRUE" "TRUE"
+    map "TRUE" "TRUE" "FALSE"
 fi
 
 if [[ "$1" == "-ma" ]]; then
-    header "TRUE" "FALSE"
-    color "FALSE" "FALSE"
-    map "FALSE" "TRUE"
+    header "TRUE" "FALSE" "FALSE"
+    color "FALSE" "FALSE" "FALSE"
+    map "FALSE" "TRUE" "FALSE"
 fi
 
 if [[ "$1" != -* ]]; then
-    header "TRUE" "FALSE"
-    color "FALSE" "FALSE"
-    map "FALSE" "TRUE"
+    header "TRUE" "FALSE" "FALSE"
+    color "FALSE" "FALSE" "FALSE"
+    map "FALSE" "TRUE" "FALSE"
 fi
 
 if [[ "$1" == "-b" ]]; then
-    bonus "TRUE" "TRUE"
+    bonus "TRUE" "TRUE" "FALSE"
+fi
+
+if [[ "$1" == "-a" ]]; then
+    header "TRUE" "FALSE" "FALSE"
+    color "FALSE" "FALSE" "FALSE"
+    map "FALSE" "FALSE" "FALSE"
+    bonus "FALSE" "TRUE" "FALSE"
+fi
+
+if [[ "$1" == "-va" ]]; then
+    header "TRUE" "TRUE" "TRUE"
 fi
